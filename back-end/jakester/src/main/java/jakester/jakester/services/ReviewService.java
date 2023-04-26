@@ -30,7 +30,6 @@ public class ReviewService {
             throw new RuntimeException("User already has a different review for this game");
         } else {
             review.setUser(user);
-            review.setGame(gameService.getGameById(idGame));
             return reviewRepository.save(review);
         }
     }

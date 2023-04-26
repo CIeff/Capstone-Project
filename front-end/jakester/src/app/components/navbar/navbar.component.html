@@ -28,10 +28,10 @@
       <p *ngIf="gamesCart && gamesCart.length!=0">{{tot}}</p>
     </div>
     <div class="dropdown">
-      <a class="avatar" (click)="toggleDropdown()" *ngIf="userData?.profile_pic">
+      <a class="avatar" (click)="toggleDropdown()" *ngIf="userData?.profile_pic && isLoggedIn">
         <img class="prof-pic" src="{{userData.profile_pic}}" alt="" />
       </a>
-      <div class="dropdown-menu" [class.open]="dropdownOpen">
+      <div class="dropdown-menu" [class.open]="dropdownOpen" *ngIf="isLoggedIn">
         <div class="dropdown-item">
           <a  (click)="navigateToProfile()">Profile</a>
           <hr class="divider">

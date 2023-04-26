@@ -212,10 +212,10 @@ export class NavbarComponent implements OnInit, OnDestroy {
     console.log(this.user);
 
     if(this.user){
-      this.userSrv.getUser(this.user.username).subscribe((data)=>{
+      this.userSrv.getUser(this.user?.username).subscribe((data)=>{
         this.userData=data;
         console.log(this.userData);
-        this.cartSrv.getCartGames(this.userData.cart.id).subscribe((data)=>{
+        this.cartSrv.getCartGames(this.userData?.cart?.id).subscribe((data)=>{
           console.log(data);
           this.gamesCart=data;
           this.refreshCart();
@@ -247,6 +247,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
       this.router.navigate(['../profile', this.userData?.id]);
     });
   }
+
 
 
 }

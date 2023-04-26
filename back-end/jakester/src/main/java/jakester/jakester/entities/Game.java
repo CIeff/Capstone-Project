@@ -67,6 +67,9 @@ public class Game {
     @Column(columnDefinition = "TEXT")
     private String vertical_poster;
 
+    @OneToMany(mappedBy = "game")
+    @JsonIgnore
+    private List<Review> reviews;
     
     @OneToMany(mappedBy = "game")  
     @JsonIgnore
