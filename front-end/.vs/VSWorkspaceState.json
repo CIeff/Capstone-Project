@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\jakester",
+    "\\jakester\\src",
+    "\\jakester\\src\\app",
+    "\\jakester\\src\\app\\auth",
+    "\\jakester\\src\\app\\auth\\auth-module",
+    "\\jakester\\src\\app\\auth\\log-in",
+    "\\jakester\\src\\app\\auth\\sign-up"
+  ],
+  "SelectedNode": "\\jakester\\src\\app\\auth\\sign-up\\sign-up.component.ts",
+  "PreviewInSolutionExplorer": false
+}

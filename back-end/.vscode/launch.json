@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-JakesterApplication<jakester>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "jakester.jakester.JakesterApplication",
+            "projectName": "jakester",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

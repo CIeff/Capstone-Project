@@ -1,0 +1,45 @@
+.card{
+  width: 250px;
+  height: 420px;
+  border: transparent;
+  border-radius: 10px;
+  outline: none;
+  img{
+    width: 250px;
+    height: 420px;
+    border: 0.1px solid yellowgreen;
+    border-radius: 10px;
+    outline: none;
+  }
+  .percentage{
+    position: absolute;
+    bottom:0;
+    padding-left: 10px;
+    color: white;
+    background-color: yellowgreen;
+    width: 100%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px ;
+    text-shadow: 1px 1px 1px rgb(0, 0, 0,0.5);
+
+  }
+}
+
+@media screen and (min-width:1200px) {
+  .card{
+    margin-right: 0;
+    width: 300px;
+    height: 500px;
+    img{
+      width: 300px;
+      height: 500px;
+      border: 2px solid yellowgreen;
+    }
+    .percentage{
+      visibility: hidden;
+    }
+  }
+  .card:last-child{
+    width: 300px;
+  }
+}

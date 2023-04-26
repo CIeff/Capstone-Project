@@ -1,0 +1,17 @@
+
+  <div class="card">
+    <img *ngIf="game.showVideo==false" src={{game.poster_path}} alt="{{game.title}} poster_path" (mouseenter)="game.showVideo = true" >
+    <span class="percentage">{{game.percentage_discount}}</span>
+    <a [routerLink]="['../games/search',game.id]" *ngIf="game.showVideo==true"  (mouseleave)="game.showVideo=false"><video src={{game.video_path}} autoplay loop></video></a>
+  </div>
+  <div class="price-info">
+    <span class="title">{{game.title}}</span>
+    <span class="full_price">{{game.full_price}}</span>
+    <span class="discount_price">{{game.discount_price}}</span>
+  </div>
+
+
+
+
+
+<!--(click)="goToSearch(game.id)"-->

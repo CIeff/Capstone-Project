@@ -1,0 +1,39 @@
+<div class="overlay"></div>
+
+<div class="pop-up slide-in">
+  <p  class="pop-title">
+    <span><h1>Leave a review</h1></span>
+    <span class="title-text">Write your own review and let others know what you think about the game!</span>
+  </p>
+
+
+
+  <form (ngSubmit)="submitReview()" [formGroup]="reviewForm" #f="ngForm">
+    <div class="d-flex justify-content-between mb-4 box-top">
+      <div class="title">
+        <label for="title">Review Title: </label>
+        <input type="text" id="title" name="title" formControlName="title" required>
+        <div *ngIf="reviewForm.controls['title'].invalid && reviewForm.controls['title'].touched">
+          Please enter a review title
+        </div>
+      </div>
+      <div class="rating">
+        <label for="rating">Rating: </label>
+        <input type="number" id="rating" name="rating" formControlName="rating" min="1" max="10" (input)="onInput($event)" required>
+        <div *ngIf="reviewForm.controls['rating'].invalid && reviewForm.controls['rating'].touched">
+          <span>Please enter a rating <br> between 1 and 10</span>
+        </div>
+      </div>
+    </div>
+    <label for="body">Review Text: </label>
+    <div class="body">
+      <textarea id="body" name="body" formControlName="body" required></textarea>
+      <div *ngIf="reviewForm.controls['body'].invalid && reviewForm.controls['body'].touched">
+        Please enter a review text (maximum 150 characters)
+      </div>
+    </div>
+    <button type="submit" class="send-button" [disabled]="reviewForm.invalid">Send Review</button>
+  </form>
+
+
+</div>

@@ -1,0 +1,92 @@
+span{
+  img{
+    width:50px;
+    margin-left: 15px;
+  }
+  .good{
+    color: white;
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+   border: 2px solid yellowgreen;
+   margin-right: 40px;
+  }
+  .not-so-good{
+    color: white;
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+   border: 2px solid orange;
+   margin-right: 40px;
+  }
+  .not-good{
+    color: white;
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+   border: 2px solid red;
+   margin-right: 40px;
+  }
+}
+.review-title{
+  font-size: 24px;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 15px;
+  text-align: center;
+  padding-bottom: 5px;
+  border-bottom: 1px solid grey;
+}
+.review-body{
+  font-size:20px;
+  padding: 5px;
+  margin-left: 10px;
+  color:grey;
+  word-wrap: break-word;
+  padding-bottom: 80px;
+}
+
+.rev-btn{
+width: 40%;
+margin: 0 auto;
+background-color: transparent;
+border: 1px solid white;
+color: white;
+padding: 10px 20px;
+border-radius: 18px;
+font-size: 16px;
+font-weight: 600;
+background-color: yellowgreen;
+border: 1px solid yellowgreen;
+margin-top: 20px;
+&:hover{
+  background-color: transparent;
+  color: yellowgreen;
+}
+}
+.modify-btn{
+background-color: orange;
+border: 1px solid orange;
+margin-right: 50px;
+&:hover{
+  background-color: transparent;
+  color: orange;
+}
+}
+.delete-btn{
+background-color: red;
+border: 1px solid red;
+&:hover{
+  background-color: transparent;
+  color: red;
+}
+}

@@ -1,0 +1,5 @@
+<div class="card">
+  <a [routerLink]="['../games/search',game.id]"><img  src={{game.vertical_poster}} alt="{{game.title}} poster_path" (mouseenter)="game.showVideo = true" ></a>
+  <span class="percentage">{{game.percentage_discount}}</span>
+</div>
+

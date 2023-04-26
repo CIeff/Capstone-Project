@@ -1,0 +1,98 @@
+.card {
+  z-index: 1;
+  outline: none;
+  border: none;
+  background-color: transparent;
+    img {
+      border-radius: 15px;
+    }
+    .percentage{
+      color:white;
+      text-shadow: 2px 2px 2px  rgb(0, 0, 0, 0.3);
+      font-size: 13px;
+      font-weight: 500;
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      border: 1px solid yellowgreen;
+      padding: 2px;
+      border-top-right-radius: 10px;
+      background-color: yellowgreen;
+    }
+}
+.price-info{
+  .title{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  }
+  color:lightgray;
+  font-weight: 100;
+  font-size: 14px;
+  margin-top: 2px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 6px;
+  backdrop-filter: blur(100px);
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid rgb(154, 205, 50,0.6);
+  border-radius: 10px;
+
+  .discount_price{
+    color: white;
+    font-weight: 500;
+    font-size: 16px;
+  }
+  .full_price{
+    color: yellowgreen;
+    text-decoration: line-through;
+    font-size: 14px;
+    align-self: center;
+    position: absolute;
+    right: 60px;
+  }
+}
+
+
+
+@media screen and (min-width: 1024px) {
+
+    .card {
+      z-index: 1;
+      outline: none;
+      border: none;
+      background-color: transparent;
+        &:hover {
+          scale: 1;
+          transform-origin: center center;
+          transition: all 0.2s ease;
+          cursor: pointer;
+          border-radius: 10px;
+        }
+        &:hover .percentage{
+          visibility: hidden;
+        }
+        img {
+          border-radius: 15px;
+        }
+        video{
+          width: 100%;
+          height: 100%;
+          display: block;
+          border-radius: 15px;
+          margin-bottom: 4px;
+        }
+
+    }
+
+}
+
+@media screen and (min-width:1200px) {
+
+
+}
+
+
+
+

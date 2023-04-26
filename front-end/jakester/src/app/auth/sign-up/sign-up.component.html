@@ -1,0 +1,19 @@
+<div class="bg">
+<form #f="ngForm" (ngSubmit)="signUpForm(f)">
+  <div class="d-flex flex-column justify-content-center cont">
+  <h3>Sign-Up</h3>
+  <label for="name">Name</label>
+  <input type="text" name="name"  ngModel placeholder="nome" class=" form-group">
+  <label for="email">Email</label>
+  <input type="email" name="email" ngModel  placeholder="email" class=" form-group">
+  <label for="password">Password</label>
+  <input type="password" name="password" ngModel  placeholder="password" autocomplete="current-password">
+  <label for="username">Username</label>
+  <input type="text" name="username" ngModel placeholder="username" >
+  <button type="submit">Sign-up</button>
+  <a routerLink="/login">or LogIn</a>
+</div>
+</form>
+</div>
+
+

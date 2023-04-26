@@ -1,0 +1,647 @@
+
+
+
+  .updater {
+    position: absolute;
+    left:50%;
+    top:28%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 70vmin;
+    border: none;
+    overflow: hidden;
+  }
+
+  .mainpane {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+     background-size: contain;
+    background-position: center;
+    position: absolute;
+    background-color: rgb(30,30,30);
+    .mainpane-info{
+      border-radius: 10px;
+      position: absolute;
+      font-size: 20px;
+      left: 39%;
+      top: 82%;
+      color:white;
+      text-align: center;
+      align-items: baseline;
+      opacity: 0;
+    }
+  }
+  .visible {
+    animation-name: fade-in;
+    animation-duration: 2.4s;
+    animation-fill-mode: forwards;
+    opacity: 1;
+  }
+  .not-visible{
+    animation-name: fade-out;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+  }
+  .mainpane .main-vid {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    border:1px solid transparent;
+    background-size: contain;
+    background-position: center;
+    --wigglesize: 0vmin;
+    --wigglezoom: 1;
+    animation:  dynamiczoom2 alternate 20s ease-in-out infinite;
+    transition: all 0.9s ease;
+    cursor: pointer;
+  }
+  .pane-info1{
+    position: none;
+  }
+  .pane-info2{
+      display: none;
+  }
+  .pane-info3{
+    display: none;
+
+  }
+  .whatsnew {
+    width: 100%;
+    height: 100%;
+    background: none;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    clip-path: polygon( 0% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 59%);
+    --pane1offset: -70%;
+    --pane2offset: 30%;
+    --pane3offset: 50%;
+    --pane1width: 100%;
+    --pane2width: 100%;
+    --pane3width: 100%;
+  }
+  .whatsnew .pane {
+    background-color: yellowgreen;
+    border:1px solid yellowgreen;
+    border-right: none;
+    border-left: none;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    color: #fff;
+    transition: transform ease-in-out 0.6s;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+  }
+  .whatsnew .pane1 {
+
+    transform: translate(var(--pane1offset), -50%) skew(40deg);
+    clip-path: polygon(0 0, var(--pane1width) 0, var(--pane1width) 100%, 0% 100%);
+  }
+  .whatsnew .pane2 {
+
+    transform: translate(var(--pane2offset), -50%) skew(40deg);
+    clip-path: polygon(0 0, var(--pane2width) 0, var(--pane2width) 100%, 0% 100%);
+  }
+  .whatsnew .pane3 {
+
+    transform: translate(var(--pane3offset), -50%) skew(40deg);
+    clip-path: polygon(0 0, var(--pane3width) 0, var(--pane3width) 100%, 0% 100%);
+  }
+  .whatsnew .pane-bg {
+    width: 135%;
+    height: 110%;
+    position: absolute;
+    left: -25%;
+    top: 0;
+    background-size: cover;
+    background-position: center;
+    transform: skew(-40deg);
+    --wigglesize: 0vmin;
+    --wigglezoom: 1;
+    animation: dynamiczoom alternate 20s ease-in-out infinite;
+    transition: all 0.9s ease;
+    animation-play-state: paused; /* aggiunta per mettere in pausa l'animazione */
+  }
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes fade-out {
+    from{
+      opacity: 1;
+    }
+    to{
+      opacity: 0;
+    }
+  }
+  .skew {
+    transform: skewX(40deg);
+  }
+  .unskew {
+    transform: skewX(-40deg);
+  }
+  @-moz-keyframes dynamiczoom {
+    0% {
+      transform: translate(0) skew(-40deg) scale(1);
+    }
+    100% {
+      transform: translate(var(--wigglesize), var(--wigglesize)) skew(-40deg) scale(var(--wigglezoom));
+    }
+  }
+  @-webkit-keyframes dynamiczoom {
+    0% {
+      transform: translate(0) skew(-40deg) scale(1);
+    }
+    100% {
+      transform: translate(var(--wigglesize), var(--wigglesize)) skew(-40deg) scale(var(--wigglezoom));
+    }
+  }
+  @-o-keyframes dynamiczoom {
+    0% {
+      transform: translate(0) skew(-40deg) scale(1);
+    }
+    100% {
+      transform: translate(var(--wigglesize), var(--wigglesize)) skew(-40deg) scale(var(--wigglezoom));
+    }
+  }
+  @keyframes dynamiczoom {
+    0% {
+      transform: translate(0) skew(-40deg) scale(1);
+    }
+    100% {
+      transform: translate(var(--wigglesize), var(--wigglesize)) skew(-40deg) scale(var(--wigglezoom));
+    }
+  }
+  @keyframes dynamiczoom2 {
+    0% {
+      transform: translate(0) scale(1);
+    }
+    100% {
+      transform: translate(var(--wigglesize), var(--wigglesize)) scale(var(--wigglezoom));
+    }
+  }
+
+
+@media screen and (min-width:1200px) {
+.updater {
+  position: absolute;
+  left:50%;
+  top:35%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 70vmin;
+  border: none;
+  overflow: hidden;
+}
+
+.mainpane {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+   background-size: contain;
+  background-position: center;
+  position: absolute;
+  background-color: rgb(30,30,30);
+  .mainpane-info{
+    border-radius: 10px;
+    position: absolute;
+    font-size: 20px;
+    left: 39%;
+    top: 82%;
+    color:white;
+    text-align: center;
+    align-items: baseline;
+    opacity: 0;
+
+    .price-info{
+      color:white;
+      display: flex;
+      justify-content: center;
+      align-items: baseline;
+      margin-top: 23px;
+      span{
+        margin-right: 20px;
+      }
+      .full-price{
+        text-decoration: line-through;
+        font-size: 23px;
+        margin:0;
+      }
+      .percentage-discount{
+        color:yellowgreen;
+        font-size: 23px;
+      }
+      .discount-price{
+        font-size: 48px;
+      }
+    }
+    .bi-tag{
+      transform: scale(-1,1);
+      color:white;
+      margin-right: 4px;
+    }
+
+    .buy-buttons{
+      display: flex;
+      justify-content: center;
+      margin-top: 12px;
+      margin-bottom: 20px;
+      margin-left: 15px;
+      margin-right: 15px;
+      .buy-button{
+        background-color: transparent;
+        border: 1px solid white;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 18px;
+        margin: 0 4px;
+        font-size: 22px;
+        font-weight: 600;
+        background-color: yellowgreen;
+        border: 1px solid yellowgreen;
+        &:hover{
+          background-color: transparent;
+          color: yellowgreen;
+        }
+      }
+      .bbtn2{
+        flex-grow: 1;
+        font-size: 22px;
+        padding: 10px 50px;
+      }
+    }
+  }
+}
+.visible {
+  animation-name: fade-in;
+  animation-duration: 2.4s;
+  animation-fill-mode: forwards;
+  opacity: 1;
+}
+.not-visible{
+  animation-name: fade-out;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+.mainpane .main-vid {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  border:1px solid transparent;
+  background-size: contain;
+  background-position: center;
+  --wigglesize: 0vmin;
+  --wigglezoom: 1;
+  animation:  dynamiczoom2 alternate 20s ease-in-out infinite;
+  transition: all 0.9s ease;
+  cursor: pointer;
+}
+.pane-info1{
+  position: absolute;
+  color:white;
+  text-shadow: 2px 2px 2px black;
+  font-size: 30px;
+  left: 25%;
+  top: 70%;
+  transform: translate(var(--pane1offset), 0%) skew(-45deg);
+  backdrop-filter: blur(50px);
+  width: 450px;
+  height: 180px;
+  border-radius: 10px;
+  border: 1px solid yellowgreen;
+  .price-info{
+    color:white;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    margin-top: 23px;
+    span{
+      margin-right: 20px;
+    }
+    .full-price{
+      text-decoration: line-through;
+      font-size: 23px;
+      margin:0;
+    }
+    .percentage-discount{
+      color:yellowgreen;
+      font-size: 30px;
+    }
+    .discount-price{
+      font-size: 48px;
+    }
+  }
+  .bi-tag{
+    transform: scale(-1,1);
+    color:white;
+    margin-right: 4px;
+  }
+
+  .buy-buttons{
+    display: flex;
+    justify-content: center;
+    margin-top: 12px;
+    margin-bottom: 20px;
+    margin-left: 15px;
+    margin-right: 15px;
+    .buy-button{
+      background-color: transparent;
+      border: 1px solid white;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 18px;
+      margin: 0 4px;
+      font-size: 20px;
+      font-weight: 600;
+      background-color: yellowgreen;
+      border: 1px solid yellowgreen;
+      &:hover{
+        background-color: transparent;
+        color: yellowgreen;
+      }
+    }
+    .bbtn2{
+      flex-grow: 1;
+      font-size: 20px;
+    }
+  }
+}
+.pane-info2{
+  display: block;
+  position: absolute;
+  color:white;
+  font-size: 30px;
+  left: 55%;
+  top: 70%;
+  transform: translate(var(--pane2offset), 0%) skew(-45deg);
+  backdrop-filter: blur(30px);
+  width: 450px;
+  height: 180px;
+  border-radius: 10px;
+  border: 1px solid yellowgreen;
+  text-shadow: 2px 2px 2px black;
+  .price-info{
+    color:white;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    margin-top: 23px;
+    span{
+      margin-right: 20px;
+    }
+    .full-price{
+      text-decoration: line-through;
+      font-size: 23px;
+      margin:0;
+    }
+    .percentage-discount{
+      color:yellowgreen;
+      font-size: 30px;
+    }
+    .discount-price{
+      font-size: 48px;
+    }
+  }
+  .bi-tag{
+    transform: scale(-1,1);
+    color:white;
+    margin-right: 4px;
+  }
+
+  .buy-buttons{
+    display: flex;
+    justify-content: center;
+    margin-top: 12px;
+    margin-bottom: 20px;
+    margin-left: 15px;
+    margin-right: 15px;
+    .buy-button{
+      background-color: transparent;
+      border: 1px solid white;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 18px;
+      margin: 0 4px;
+      font-size: 20px;
+      font-weight: 600;
+      background-color: yellowgreen;
+      border: 1px solid yellowgreen;
+      &:hover{
+        background-color: transparent;
+        color: yellowgreen;
+      }
+    }
+    .bbtn2{
+      flex-grow: 1;
+      font-size: 20px;
+    }
+  }
+}
+.pane-info3{
+  display: block;
+  position: absolute;
+  color:white;
+  font-size: 30px;
+  left: 50%;
+  top: 65%;
+  backdrop-filter: blur(30px);
+  width: 450px;
+  height: 180px;
+  border-radius: 10px;
+  border: 1px solid yellowgreen;
+  text-shadow: 2px 2px 2px black;
+  transform: translate(var(--pane3offset), 0%) skew(-40deg);
+  .price-info{
+    color:white;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    margin-top: 23px;
+    span{
+      margin-right: 20px;
+    }
+    .full-price{
+      text-decoration: line-through;
+      font-size: 23px;
+      margin:0;
+    }
+    .percentage-discount{
+      color:yellowgreen;
+      font-size: 30px;
+    }
+    .discount-price{
+      font-size: 48px;
+    }
+  }
+  .bi-tag{
+    transform: scale(-1,1);
+    color:white;
+    margin-right: 4px;
+  }
+
+  .buy-buttons{
+    display: flex;
+    justify-content: center;
+    margin-top: 12px;
+    margin-bottom: 20px;
+    margin-left: 15px;
+    margin-right: 15px;
+    .buy-button{
+      background-color: transparent;
+      border: 1px solid white;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 18px;
+      margin: 0 4px;
+      font-size: 20px;
+      font-weight: 600;
+      background-color: yellowgreen;
+      border: 1px solid yellowgreen;
+      &:hover{
+        background-color: transparent;
+        color: yellowgreen;
+      }
+    }
+    .bbtn2{
+      flex-grow: 1;
+      font-size: 20px;
+    }
+  }
+}
+.whatsnew {
+  width: 100%;
+  height: 100%;
+  background: none;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  clip-path: polygon( 0% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 59%);
+  --pane1offset: -70%;
+  --pane2offset: 30%;
+  --pane3offset: 50%;
+  --pane1width: 100%;
+  --pane2width: 100%;
+  --pane3width: 100%;
+}
+.whatsnew .pane {
+  background-color: yellowgreen;
+  border:1px solid yellowgreen;
+  border-right: none;
+  border-left: none;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  color: #fff;
+  transition: transform ease-in-out 0.6s;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+.whatsnew .pane1 {
+
+  transform: translate(var(--pane1offset), -50%) skew(40deg);
+  clip-path: polygon(0 0, var(--pane1width) 0, var(--pane1width) 100%, 0% 100%);
+}
+.whatsnew .pane2 {
+
+  transform: translate(var(--pane2offset), -50%) skew(40deg);
+  clip-path: polygon(0 0, var(--pane2width) 0, var(--pane2width) 100%, 0% 100%);
+}
+.whatsnew .pane3 {
+
+  transform: translate(var(--pane3offset), -50%) skew(40deg);
+  clip-path: polygon(0 0, var(--pane3width) 0, var(--pane3width) 100%, 0% 100%);
+}
+.whatsnew .pane-bg {
+  width: 135%;
+  height: 110%;
+  position: absolute;
+  left: -25%;
+  top: 0;
+  background-size: cover;
+  background-position: center;
+  transform: skew(-40deg);
+  --wigglesize: 0vmin;
+  --wigglezoom: 1;
+  animation: dynamiczoom alternate 20s ease-in-out infinite;
+  transition: all 0.9s ease;
+  animation-play-state: paused; /* aggiunta per mettere in pausa l'animazione */
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fade-out {
+  from{
+    opacity: 1;
+  }
+  to{
+    opacity: 0;
+  }
+}
+.skew {
+  transform: skewX(40deg);
+}
+.unskew {
+  transform: skewX(-40deg);
+}
+@-moz-keyframes dynamiczoom {
+  0% {
+    transform: translate(0) skew(-40deg) scale(1);
+  }
+  100% {
+    transform: translate(var(--wigglesize), var(--wigglesize)) skew(-40deg) scale(var(--wigglezoom));
+  }
+}
+@-webkit-keyframes dynamiczoom {
+  0% {
+    transform: translate(0) skew(-40deg) scale(1);
+  }
+  100% {
+    transform: translate(var(--wigglesize), var(--wigglesize)) skew(-40deg) scale(var(--wigglezoom));
+  }
+}
+@-o-keyframes dynamiczoom {
+  0% {
+    transform: translate(0) skew(-40deg) scale(1);
+  }
+  100% {
+    transform: translate(var(--wigglesize), var(--wigglesize)) skew(-40deg) scale(var(--wigglezoom));
+  }
+}
+@keyframes dynamiczoom {
+  0% {
+    transform: translate(0) skew(-40deg) scale(1);
+  }
+  100% {
+    transform: translate(var(--wigglesize), var(--wigglesize)) skew(-40deg) scale(var(--wigglezoom));
+  }
+}
+@keyframes dynamiczoom2 {
+  0% {
+    transform: translate(0) scale(1);
+  }
+  100% {
+    transform: translate(var(--wigglesize), var(--wigglesize)) scale(var(--wigglezoom));
+  }
+}
+}

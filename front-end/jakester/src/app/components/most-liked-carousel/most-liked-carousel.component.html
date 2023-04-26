@@ -1,0 +1,29 @@
+<div id="hero-slides" #hero>
+  <div id="header" >
+    <div id="logo" ></div>
+    <div id="menu" #menu>
+      <div id="hamburger">
+        <div class="slice"></div>
+        <div class="slice"></div>
+        <div class="slice"></div>
+      </div>
+    </div>
+  </div>
+  <div id="slides-cont">
+    <div class="button" #next id="next" (click)="goToPage(currentPage + 1)"></div>
+    <div class="button" #prev id="prev" (click)="goToPage(currentPage - 1)"></div>
+    <div id="slides" #slides>
+      <div class="slide" *ngFor="let game of games; let i=index" [ngStyle]="{'background-image': 'url(' + game.vertical_poster + ')'}" >
+        <div class="number">{{i}}</div>
+        <div class="body">
+          <div class="location">Info</div>
+          <div class="headline">{{game.title}}</div>
+          <a [routerLink]="['../games/search',game.id]" target="_blank">
+            <div class="link">View game page</div></a>
+        </div>
+      </div>
+    </div>
+    <div id="next-catch"></div>
+    <div id="prev-catch"></div>
+  </div>
+</div>

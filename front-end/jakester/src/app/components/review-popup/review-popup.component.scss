@@ -1,0 +1,166 @@
+.pop-up{
+  color: white;
+  width : 1000px;
+  height : 600px;
+  border: 2px solid yellowgreen;
+  backdrop-filter: blur(50px);
+  border-radius: 15px;
+  position: fixed;
+  top: 20%;
+  left: 22%;
+  text-align: center;
+  z-index: 1000;
+}
+
+.title-text{
+  font-size: 20px;
+  margin-top: 22px;
+  margin-bottom: 20px;
+  color: grey;
+}
+
+.pop-title{
+  margin-top: 15px;
+  text-align: center;
+}
+
+.box-top{
+  margin-right: 100px;
+  align-items: center;
+}
+
+.rating{
+  text-align: left;
+  margin-left: 0px;
+  padding-top: 10px;
+}
+
+input[type="number"] {
+  padding: 8px;
+  border: 2px solid red;
+  box-shadow: 0px 1px 0px 1px rgb(0, 0, 0,0.3);
+  border-radius: 4px;
+  margin-left: 20px;
+  background-color: transparent;
+  color:red;
+  width: 40px;
+  font-size: 18px;
+  font-weight: 600;
+  text-shadow: 1px 1px 1px black;
+  text-align: center;
+  &:focus {
+    outline: none;
+  }
+}
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.title{
+  text-align: left;
+  margin-left: 100px;
+  margin-top: 20px;
+}
+input[type=text]{
+  padding: 8px;
+  border: 2px solid white;
+  box-shadow: 0px 1px 0px 1px rgb(0, 0, 0,0.3);
+  border-radius: 4px;
+  margin-left: 20px;
+  background-color: transparent;
+  color:white;
+  width: 350px;
+  font-size: 20px;
+  font-weight: 500;
+  text-shadow: 1px 1px 1px black;
+  text-align: center;
+  &:focus {
+    outline: none;
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin:10px;
+}
+
+label {
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.body{
+  margin-bottom: 40px;
+}
+
+textarea {
+  border-radius: 10px;
+  display: block ;
+  margin: 0 auto ;
+  width: 80% ;
+  resize: none ;
+  border: none;
+  min-height: 150px;
+  background-color: rgb(0, 0, 0,0.7);
+  color: white;
+  font-size: 18px;
+  padding: 10px 15px;
+  margin-top: 10px;
+  }
+
+button[type="submit"] {
+  margin-top: 40px;
+  margin-bottom: 30px;
+  width: 80%;
+  margin: 0 auto;
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 18px;
+  font-size: 20px;
+  font-weight: 600;
+  background-color: yellowgreen;
+  border: 1px solid yellowgreen;
+  &:hover{
+    background-color: transparent;
+    color: yellowgreen;
+  }
+}
+button:disabled{
+  background-color: transparent;
+  color: rgb(156, 156, 156);
+  border: 1px solid rgb(156, 156, 156);
+  &:hover{
+    background-color: transparent;
+    color: rgb(156, 156, 156);
+  }
+}
+
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 999;
+  pointer-events: none;
+}
+
+.slide-in {
+  animation: slide-in 0.3s ease-out;
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

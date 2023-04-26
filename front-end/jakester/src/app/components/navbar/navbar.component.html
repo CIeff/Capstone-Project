@@ -1,0 +1,47 @@
+<div *ngIf="show">
+<nav class="navbar" [class.sticky]="isSticky" >
+  <div class="navbar-left">
+    <a class="logo" routerLink="/games"><img src="../../../assets/Logo jake-07.png" ></a>
+    <div class="search-icon" #icon>
+      <span>
+      <svg (click)="toggleSearchBar()" class="search-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+      </svg>
+      </span>
+    </div>
+    <div class="search-off">
+      <app-search class="search-input" (searchTitle)="onSearchTextEntered($event)"></app-search>
+    </div>
+    <button class="close-search" (click)="closeSearchBar()"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+      <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+    </svg></button>
+  </div>
+
+  <div class="log-in" *ngIf="!isLoggedIn">
+    <a routerLink="/login">Log-in</a>
+  </div>
+  <div class="navbar-right">
+    <div class="cart" *ngIf="userData?.cart && isLoggedIn  "><a [routerLink]="['/cart']">
+      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16">
+        <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
+      </svg></a>
+      <p *ngIf="gamesCart && gamesCart.length!=0">{{tot}}</p>
+    </div>
+    <div class="dropdown">
+      <a class="avatar" (click)="toggleDropdown()" *ngIf="userData?.profile_pic">
+        <img class="prof-pic" src="{{userData.profile_pic}}" alt="" />
+      </a>
+      <div class="dropdown-menu" [class.open]="dropdownOpen">
+        <div class="dropdown-item">
+          <a  [routerLink]="['../profile',userData?.id]">Profilo</a>
+          <hr class="divider">
+        </div>
+        <div class="dropdown-item">
+          <button (click)="onLogOut()" class="btn-logout">Log-out</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+</div>
+

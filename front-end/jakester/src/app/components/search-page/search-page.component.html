@@ -1,0 +1,66 @@
+<!--<app-navbar (searchTitle)="handleData($event)"></app-navbar>-->
+<div class="show-filters container d-none d-xl-block">
+  <div>
+  <button (click)="sortByTitle()">Title</button>
+  <button (click)="sortByReleaseDate()">Date</button>
+  <button (click)="resetFilters()">Reset</button>
+  <!--price / rating / -->
+  </div>
+  <div class="d-flex  flex-container2">
+  <div class="filter">
+    <label class="filter-name">Genre:</label>
+    <select [(ngModel)]="filters.genre" (change)="onFilterChange()">
+      <option value="" class="filter-value">All</option>
+      <option value="ACTION" class="filter-value">Action</option>
+      <option value="ADVENTURE" class="filter-value">Adventure</option>
+      <option value="RPG" class="filter-value">RPG</option>
+      <option value="FANTASY" class="filter-value">Fantasy</option>
+      <option value="CO_OP" class="filter-value">Co-op</option>
+      <option value="HORROR" class="filter-value">Horror</option>
+      <option value="SPORTS" class="filter-value">Sport</option>
+      <option value="STRATEGY" class="filter-value">Strategy</option>
+      <option value="MANAGEMENT" class="filter-value">Management</option>
+      <option value="TURN_BASED" class="filter-value">Turn-based</option>
+      <option value="RTS" class="filter-value">RTS</option>
+      <option value="PUZZLE" class="filter-value">Puzzle</option>
+      <option value="FPS" class="filter-value">FPS</option>
+      <option value="FIGHTING" class="filter-value">Fighting</option>
+    </select>
+    </div>
+  <div class="filter">
+    <label>Platform:</label>
+    <select [(ngModel)]="filters.platform" (change)="onFilterChange()">
+      <option value="">All</option>
+      <option value="Steam">Steam</option>
+      <option value="Xbox">Xbox</option>
+      <option value="Playstation">PlayStation</option>
+    </select>
+  </div>
+  <div>
+    <label>Release Year:</label>
+    <input type="number" max="2023" min="2000"  [(ngModel)]="filters.releaseYear" (change)="onFilterChange()" />
+  </div>
+  <div>
+    <label>Under:</label>
+    <input type="number" max="1000" min="0"  [(ngModel)]="filters.price" (change)="onFilterChange()" />
+    €
+  </div>
+</div>
+</div>
+
+<div class="container games">
+  <div *ngIf="noResultsFound()">
+    <p  class="no-results">
+      No result found for "{{searchTitle}}"
+    </p>
+  </div>
+  <div class="row">
+    <ng-container *ngFor="let game of filteredGames">
+      <div class="col-6 col-md-4" *ngIf=" game.title.toLowerCase().includes(searchTitle.toLowerCase())">
+        <app-game-card [game]="game"  [widhtMax]="true"></app-game-card>
+      </div>
+    </ng-container>
+  </div>
+</div>
+
+

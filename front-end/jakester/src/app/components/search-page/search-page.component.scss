@@ -1,0 +1,89 @@
+.games{
+  margin-top: 65px;
+}
+
+.no-results{
+  color:darkgray;
+  font-size: 40px;
+  text-align: center;
+  margin-top: 150px;
+}
+
+
+@media screen and (min-width:1200px) {
+  .games{
+  margin-top: 55px;
+}
+
+body{
+  background: gray;
+}
+
+.no-results{
+  color:darkgray;
+  font-size: 40px;
+  text-align: center;
+  margin-top: 150px;
+}
+
+
+.show-filters{
+  margin-top: 100px;
+  width: 1280px;
+  left: -310px;
+  color: white;
+  border-radius: 15px;
+  padding: 30px;
+  margin-bottom: 10px;
+  border: none;
+  button{
+    background-color: rgb(154, 205, 50,0.6);
+    border: 1px solid yellowgreen;
+    color: white;
+    text-shadow: 1px 1px 1px black;
+    font-size: 16px;
+    margin-right: 10px;
+    margin-left: 10px;
+    cursor: pointer;
+    margin-bottom: 5px;
+  }
+  select, input{
+    background-color:transparent;
+    color:white;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding-left: 0px;
+    text-indent: 5px;
+    border: 1px solid yellowgreen;
+    border-radius: 5px;
+  }
+  select::-ms-expand {
+    display: none;
+  }
+  .filter{
+    text-indent: 10px;
+  }
+  .filter option{
+    background-color: transparent;
+    color: black;
+  }
+  .filter::after{
+    content: "⮟";
+    font-size: 12px;
+    color: yellowgreen;
+    position: relative;
+    right: 20px;
+    top:-2px;
+    z-index: -1;
+  }
+  .flex-container2{
+    margin-top: 10px;
+    justify-content: space-between;
+  }
+  label{
+    font-size: 20px;
+    margin-right: 10px;
+  }
+}
+}

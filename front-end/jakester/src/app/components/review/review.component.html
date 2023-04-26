@@ -1,0 +1,15 @@
+<span class="d-flex justify-content-between">
+  <img src="{{reviewUser?.profile_pic}}">
+  <span *ngIf="review.rating<7&&review.rating>=5" class="not-so-good"> {{review.rating}}</span>
+  <span *ngIf="review.rating<5" class="not-good"> {{review.rating}}</span>
+  <span *ngIf="review.rating>=7" class="good">{{review.rating}}</span>
+</span>
+<p class="review-title">
+  {{review.title}}
+</p>
+<p class="review-body">
+  {{review.body}}
+</p>
+<button *ngIf="review?.user.id==userData?.id" class="modify-btn rev-btn" (click)="modifyReview(review)">Update Review</button>
+<button *ngIf="review?.user.id==userData?.id" class="delete-btn rev-btn" (click)="deleteReview(review.id)">Delete Review</button>
+
