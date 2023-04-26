@@ -1309,6 +1309,88 @@ public class GamesCreationRunner implements ApplicationRunner {
         });
         Portal.setOnStock(gameService.isOnStock(Portal));
 
+        Game Halo5=new Game();
+        Halo5.setTitle("Halo 5: Guardians");
+        Halo5.setPoster_path("https://gaming-cdn.com/images/products/1436/616x353/halo-5-guardians-xbox-one-xbox-series-x-s-xbox-one-xbox-series-x-s-game-microsoft-store-europe-cover.jpg?v=1664985223");
+        Halo5.setBackground_img("https://gaming-cdn.com/img/products/1436/pcover/1436.jpg?v=1664985223");
+        Halo5.setTitle_img("https://gaming-cdn.com/images/products/1436/380x218/halo-5-guardians-xbox-one-xbox-series-x-s-xbox-one-xbox-series-x-s-game-microsoft-store-europe-cover.jpg?v=1664985223");
+        Halo5.setVideo_path("https://gaming-cdn.com/videos/products/1436/800x450/game-microsoft-store-europe-halo-5-guardians-preview.webm?v=1664985223");
+        Halo5.setFull_price("19.99€");
+        Halo5.setDiscount_price("6.98€");
+        Halo5.setPercentage_discount("-65%");
+        Halo5.setRating(9);
+        Halo5.setRating_count(7);
+        Halo5.setDescription("Halo 5: Guardians is a first-person shooter video game developed by 343 Industries and published by Microsoft Studios for the Xbox One. The fifth mainline entry and tenth overall in the Halo series, it was released worldwide on October 27, 2015. The game's plot follows two fireteams of human supersoldiers: Blue Team, led by Master Chief, and Fireteam Osiris, led by Spartan Locke. When the former goes absent without leave to track down the artificial intelligence construct Cortana, Master Chief's loyalty is called into question, and Fireteam Osiris is sent to retrieve him.");
+        Halo5.setRelease_date(LocalDate.of( 2015, 10, 27));
+        Halo5.setDeveloper("343 Industries");
+        Halo5.setPublisher("Microsoft Studios");   
+        Halo5.setGenres(new Genre[] {Genre.ACTION,Genre.ADVENTURE,Genre.FPS}); 
+        Halo5.setVideo_trailer("https://www.youtube.com/embed/GhTMIyhxJJc");
+        Halo5.setAbout_the_game("Halo 5: Guardians is a first-person shooter video game developed by 343 Industries and published by Microsoft Studios for the Xbox One. The fifth mainline entry and tenth overall in the Halo series, it was released worldwide on October 27, 2015. The game's plot follows two fireteams of human supersoldiers: Blue Team, led by Master Chief, and Fireteam Osiris, led by Spartan Locke. When the former goes absent without leave to track down the artificial intelligence construct Cortana, Master Chief's loyalty is called into question, and Fireteam Osiris is sent to retrieve him.");
+        Halo5.setSystem_requirements(new String[]{
+            "OS: Windows 7 64-bit or Windows 8.1 64-bit or Windows 10 64-bit",
+            "Processor: Intel Core i5-750 or AMD Phenom II X4 965",
+            "Memory: 8 GB RAM",
+            "Graphics: NVIDIA GeForce GTX 670 or AMD Radeon HD 7950 with 2 GB VRAM",
+            "DirectX: Version 11",
+            "Network: Broadband Internet connection",
+            "Storage: 8 GB available space",
+            "Additional Notes: 720p @ 30fps"
+        });
+        Halo5.setShowVideo(false);
+        Halo5.setPlatform("Xbox");
+        Halo5.setQuantity(22);
+        Halo5.setFormat("Digital Download");
+        Halo5.setScreenshots(new String[]{
+            "https://gaming-cdn.com/images/products/1436/screenshot/halo-5-guardians-xbox-one-xbox-series-x-s-xbox-one-xbox-series-x-s-game-microsoft-store-europe-wallpaper-1.jpg?v=1664985223",
+            "https://gaming-cdn.com/images/products/1436/screenshot/halo-5-guardians-xbox-one-xbox-series-x-s-xbox-one-xbox-series-x-s-game-microsoft-store-europe-wallpaper-2.jpg?v=1664985223",
+            "https://gaming-cdn.com/images/products/1436/screenshot/halo-5-guardians-xbox-one-xbox-series-x-s-xbox-one-xbox-series-x-s-game-microsoft-store-europe-wallpaper-3.jpg?v=1664985223",
+            "https://gaming-cdn.com/images/products/1436/screenshot/halo-5-guardians-xbox-one-xbox-series-x-s-xbox-one-xbox-series-x-s-game-microsoft-store-europe-wallpaper-4.jpg?v=1664985223",
+            "https://gaming-cdn.com/images/products/1436/screenshot/halo-5-guardians-xbox-one-xbox-series-x-s-xbox-one-xbox-series-x-s-game-microsoft-store-europe-wallpaper-5.jpg?v=1664985223",
+        });
+        Halo5.setOnStock(gameService.isOnStock(Halo5));
+
+        Game God_of_War_Ragnarok = new Game();
+        God_of_War_Ragnarok.setBackground_img("https://www.instant-gaming.com/images/products/9312/380x218/9312.jpg?v=1681287658");
+        God_of_War_Ragnarok.setTitle_img("https://www.instant-gaming.com/images/products/9312/271x377/9312.jpg?v=1681287658");
+        God_of_War_Ragnarok.setBackground_img("https://gaming-cdn.com/img/products/9312/pcover/9312.jpg?v=1681287658");
+        God_of_War_Ragnarok.setVideo_path("https://www.instant-gaming.com/videos/products/9312/800x450/god-of-war-ragnarok-ps5-playstation-5-game-playstation-store-europe-preview.webm?v=1667995295");
+        God_of_War_Ragnarok.setFull_price("69.99€");
+        God_of_War_Ragnarok.setDiscount_price("55.58€");
+        God_of_War_Ragnarok.setRating(10);
+        God_of_War_Ragnarok.setRating_count(22);
+        God_of_War_Ragnarok.setRelease_date(LocalDate.of( 2022, 11, 9));
+        God_of_War_Ragnarok.setDeveloper("Santa Monica Studio");
+        God_of_War_Ragnarok.setPublisher("Sony Interactive Entertainment");
+        God_of_War_Ragnarok.setGenres(new Genre[] {Genre.ACTION,Genre.ADVENTURE});
+        God_of_War_Ragnarok.setVideo_trailer("https://www.youtube.com/embed/EE-4GvjKcfs");
+        God_of_War_Ragnarok.setAbout_the_game("God of War: Ragnarök is an upcoming action-adventure game developed by Santa Monica Studio and published by Sony Interactive Entertainment (SIE). It is the sequel to 2018's God of War, the eighth chronologically, and the tenth installment in the God of War series. The game is loosely based on Norse mythology, and is set in ancient Norway and other mythical locations. The player controls Kratos, a former Greek God of War and the last of the Greek Pantheon, and his young son Atreus, who accompanies him on a journey to fulfill his recently deceased second wife's last wish, which is to spread her ashes at the highest peak of the nine realms. Kratos keeps his troubled past a secret from Atreus, who is unaware of his divine nature. Along their journey, they encounter monsters and gods of the Norse world.");
+        God_of_War_Ragnarok.setSystem_requirements(new String[]{
+            "OS: Windows 7 64-bit or Windows 8.1 64-bit or Windows 10 64-bit",
+            "Processor: Intel Core i5-750 or AMD Phenom II X4 965",
+            "Memory: 8 GB RAM",
+            "Graphics: NVIDIA GeForce GTX 670 or AMD Radeon HD 7950 with 2 GB VRAM",
+            "DirectX: Version 11",
+            "Network: Broadband Internet connection",
+            "Storage: 58 GB available space",
+            "Additional Notes: 720p @ 30fps"
+        });
+        God_of_War_Ragnarok.setShowVideo(false);
+        God_of_War_Ragnarok.setPlatform("Playstation");
+        God_of_War_Ragnarok.setQuantity(52);
+        God_of_War_Ragnarok.setFormat("Digital");
+        God_of_War_Ragnarok.setScreenshots(new String[]{
+            "https://gaming-cdn.com/images/products/9312/screenshot/god-of-war-ragnarok-ps5-playstation-5-game-playstation-store-europe-wallpaper-1.jpg?v=1681287658",
+            "https://gaming-cdn.com/images/products/9312/screenshot/god-of-war-ragnarok-ps5-playstation-5-game-playstation-store-europe-wallpaper-2.jpg?v=1681287658",
+            "https://gaming-cdn.com/images/products/9312/screenshot/god-of-war-ragnarok-ps5-playstation-5-game-playstation-store-europe-wallpaper-3.jpg?v=1681287658",
+            "https://gaming-cdn.com/images/products/9312/screenshot/god-of-war-ragnarok-ps5-playstation-5-game-playstation-store-europe-wallpaper-4.jpg?v=1681287658",
+            "https://gaming-cdn.com/images/products/9312/screenshot/god-of-war-ragnarok-ps5-playstation-5-game-playstation-store-europe-wallpaper-5.jpg?v=1681287658",
+        });
+        God_of_War_Ragnarok.setOnStock(gameService.isOnStock(God_of_War_Ragnarok));
+
+
+
+
 
         Elden_Ring.setVertical_poster("https://preview.redd.it/3quah3zosi571.jpg?width=2715&format=pjpg&auto=webp&s=59d3a2d86fe661ca6207e388b30c4ae23045d2ac");
         God_of_War.setVertical_poster("https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/71DRhS9jOeL._AC_SL1499_.jpg");
@@ -1340,7 +1422,10 @@ public class GamesCreationRunner implements ApplicationRunner {
         The_Witcher_3_Wild_Hunt.setVertical_poster("https://picfiles.alphacoders.com/198/thumb-198636.jpg");
         Wo_Long_Fallen_Dynasty.setVertical_poster("https://thumbnails.pcgamingwiki.com/e/e9/Wo_Long_Fallen_Dynasty_cover.png/300px-Wo_Long_Fallen_Dynasty_cover.png");
         Resident_Evil_Village_Gold_Edition.setVertical_poster("https://image.api.playstation.com/vulcan/ap/rnd/202207/0706/D8YACd9U8RAcdtOVpXeXDpzg.png");
-        
+        Halo5.setVertical_poster("https://mir-s3-cdn-cf.behance.net/project_modules/fs/306bb318854869.562d075a1ace8.png");
+        God_of_War_Ragnarok.setVertical_poster("https://picfiles.alphacoders.com/556/thumb-556163.jpg");
+
+
         gameService.saveGame(Elden_Ring);      
         gameService.saveGame(God_of_War);
         gameService.saveGame(total_War_Warhammer_III);
@@ -1371,6 +1456,7 @@ public class GamesCreationRunner implements ApplicationRunner {
         gameService.saveGame(Street_Fighter_V);
         gameService.saveGame(Portal_2);
         gameService.saveGame(Portal);
+        gameService.saveGame(Halo5);
 
 
 

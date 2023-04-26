@@ -26,8 +26,8 @@ export class ReviewServiceService {
     }))
   }
 
-  saveReview(review:Review, id:number){
-    return this.http.post<Review>('http://localhost:8080/api/reviews/'+id+'/add', review).pipe(catchError((error)=>{
+  saveReview(review:Review, id:number, idGame:number){
+    return this.http.post<Review>('http://localhost:8080/api/reviews/'+idGame+'/'+id+'/add', review).pipe(catchError((error)=>{
       console.log(error);
       throw error;
     }))

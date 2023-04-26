@@ -18,16 +18,19 @@ public class ReviewService {
 
     @Autowired UserService userService;
 
-    public Review saveReview(Review review, Long idUser) {
+    @Autowired GameService gameService;
+
+    public Review saveReview(Review review, Long idUser, Long idGame) {
         User user = userService.findUserById(idUser);
         if (user == null) {
             throw new RuntimeException("User not found");
         }
-        Review existingReview = reviewRepository.findByUserId(idUser);
+        Review existingReview = reviewRepository.findByGameAndUserId(gameService.getGameById(idGame), idUser);
         if (existingReview != null && !existingReview.getId().equals(review.getId())) {
-            throw new RuntimeException("User already has a different review");
+            throw new RuntimeException("User already has a different review for this game");
         } else {
             review.setUser(user);
+            review.setGame(gameService.getGameById(idGame));
             return reviewRepository.save(review);
         }
     }

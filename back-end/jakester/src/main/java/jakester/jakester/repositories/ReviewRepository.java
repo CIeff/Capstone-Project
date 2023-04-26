@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import jakarta.validation.OverridesAttribute.List;
+import jakester.jakester.entities.Game;
 import jakester.jakester.entities.Review;
 
 @Repository
@@ -17,5 +18,6 @@ public interface ReviewRepository extends JpaRepository<Review, Long>{
      void deleteById(Long id);
      boolean existsByUserId(Long id);
      Review findByUserId(Long id);
+     Review findByGameAndUserId(Game game, Long idUser);
     
 }

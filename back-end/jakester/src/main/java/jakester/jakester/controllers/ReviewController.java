@@ -35,9 +35,9 @@ public class ReviewController {
         return reviewService.getAllReviews();
     }
 
-    @PostMapping(value="/{idUser}/add",consumes="application/json")
-    public ResponseEntity<Review> saveReview(@PathVariable Long idUser, @RequestBody Review review) {
-        Review savedReview = reviewService.saveReview(review, idUser);
+    @PostMapping(value="/{idGame}/{idUser}/add",consumes="application/json")
+    public ResponseEntity<Review> saveReview(@PathVariable Long idGame ,@PathVariable Long idUser, @RequestBody Review review) {
+        Review savedReview = reviewService.saveReview(review, idUser, idGame);
         return new ResponseEntity<>(savedReview, HttpStatus.CREATED);
     }
 

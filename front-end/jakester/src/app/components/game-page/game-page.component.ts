@@ -72,7 +72,6 @@ export class GamePageComponent implements OnInit {
         if(this.userData){
           this.isLoggedIn=true;
           this.getReviews();
-          this.getUserReview();
         }else{
           this.isLoggedIn=false;
         }
@@ -100,8 +99,9 @@ export class GamePageComponent implements OnInit {
 
   getReviews(){
     this.rewiewSrv.getReviews().subscribe((data)=>{
-     this.reviews=data.filter((review:Review)=>review.game.id==this.gameIdNumber);
+     this.reviews=data.filter((review:Review)=>review?.game.id==this.gameIdNumber);
       this.checkReviews();
+      this.getUserReview();
     });
   }
 
@@ -115,8 +115,8 @@ export class GamePageComponent implements OnInit {
   }
 
   checkReviews(){
-    this.reviews.forEach((review:Review)=>{
-      if(review.user.id==this.userData.id){
+    this.reviews?.forEach((review:Review)=>{
+      if(review?.user.id==this.userData?.id){
         this.reviewDone=true;
       }
     });
@@ -137,7 +137,7 @@ export class GamePageComponent implements OnInit {
 
 
   addReview(review: Review){
-    this.rewiewSrv.saveReview(review,this.userData.id).subscribe(() => {
+    this.rewiewSrv.saveReview(review,this.userData.id,this.gameIdNumber).subscribe(() => {
       this.getReviews();
     });
   }
@@ -176,6 +176,8 @@ export class GamePageComponent implements OnInit {
 
   deleted(){
     this.getReviews();
+    this.reviewDone=false;
+    this.updateReview=null;
   }
 
   popUpChange(){
@@ -190,9 +192,9 @@ export class GamePageComponent implements OnInit {
     setTimeout(() => {
       this.popUp=true;
     },0);
-    this.updateReview=review;
+    console.log(this.userReview);
+    this.updateReview=this.userReview;
   }
-
 
 
 

@@ -3,7 +3,7 @@
   <div class="profile-pic">
     <img src="{{user.profile_pic}}" alt="profile picture">
   </div>
-  <button (click)="showWidget()"> Upload picture</button>
+  <button (click)="showWidget()" *ngIf="user?.id==userLoggedIn?.id"> Upload picture</button>
 
   <div class="profile-info">
     <h1>Profile Info</h1>

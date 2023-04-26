@@ -6,6 +6,7 @@ import { CartServiceService } from '../services/cart-service.service';
 import { Subscription } from 'rxjs';
 import { SearchServiceService } from '../services/search-service.service';
 import { Game, GameServiceService } from '../services/game-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -33,7 +34,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
   private cartSub!: Subscription;
   //private refreshSub!: Subscription;
 
-  constructor(private gameSrv:GameServiceService, private searchSrv:SearchServiceService, private authSrv:AuthServiceService, private elementRef: ElementRef, private userSrv:UserServiceService, private cartSrv:CartServiceService) {
+  constructor(private gameSrv:GameServiceService, private searchSrv:SearchServiceService, private authSrv:AuthServiceService, private elementRef: ElementRef, private userSrv:UserServiceService, private cartSrv:CartServiceService, private router:Router) {
     const mediaQuery = window.matchMedia('(max-width: 1200px)');
     this.isSmallScreen = mediaQuery.matches;
     mediaQuery.addListener((mq) => {
@@ -231,6 +232,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
       });
     });
   }
+
 
 
 }

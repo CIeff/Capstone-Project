@@ -44,6 +44,9 @@ export class ProfileComponent implements OnInit {
 
   user:any;
 
+  userIn:any;
+  userLoggedIn:any;
+
   previewImgSrc!:string;
 
   widget: any;
@@ -56,6 +59,13 @@ export class ProfileComponent implements OnInit {
       console.log(this.user);
     });
 
+    this.userIn=JSON.parse(localStorage.getItem('user') || '{}');
+
+    this.userSrv.getUser(this.userIn.username).subscribe((data:any)=>{
+      console.log(data);
+      this.userLoggedIn=data;
+      console.log(this.userLoggedIn);
+    });
 
   }
 
