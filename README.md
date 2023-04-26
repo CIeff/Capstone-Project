@@ -1,7 +1,7 @@
 E-commerce project as capstone project for graduation after the full-stack course at EPICODE.
 
 The site is a retailer of online activation keys for videogames ( and potentially recharge cards or downloadable content for online platforms).
-Composed by a main page, product-specific page, search-page, cart and profile; it has the basis for a pseudo realistic functionable site.
+Composed by a main page, product-specific page, search-page, cart and profile (with a register/log-in functionality); it has the basis for a pseudo realistic functionable site.
 
 Technologies used :
   Front-end: 
