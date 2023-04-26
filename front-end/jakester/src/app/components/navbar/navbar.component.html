@@ -33,7 +33,7 @@
       </a>
       <div class="dropdown-menu" [class.open]="dropdownOpen">
         <div class="dropdown-item">
-          <a  [routerLink]="['../profile',userData?.id]">Profilo</a>
+          <a  (click)="navigateToProfile()">Profile</a>
           <hr class="divider">
         </div>
         <div class="dropdown-item">

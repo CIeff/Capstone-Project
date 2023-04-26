@@ -6,7 +6,7 @@ import { CartServiceService } from '../services/cart-service.service';
 import { Subscription } from 'rxjs';
 import { SearchServiceService } from '../services/search-service.service';
 import { Game, GameServiceService } from '../services/game-service.service';
-import { Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -48,42 +48,12 @@ export class NavbarComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.authSrv.areYouLoggedIn$.subscribe((isLoggedIn)=>{
-      this.isLoggedIn=isLoggedIn;
+
+    this.router.events.subscribe(event=>{
+      if(event instanceof NavigationEnd){
+        this.updateUserData();
+      }
     })
-
-    localStorage.getItem('user') ? this.user = JSON.parse(localStorage.getItem('user')!) : this.user = null;
-    console.log(this.user);
-
-    if(this.user){
-      this.userSrv.getUser(this.user.username).subscribe((data)=>{
-        this.userData=data;
-        console.log(this.userData);
-        this.cartSrv.getCartGames(this.userData.cart.id).subscribe((data)=>{
-          console.log(data);
-          this.gamesCart=data;
-          this.refreshCart();
-          console.log(this.gamesCart);
-          this.tot=0;
-          this.gamesCart.forEach((game:any) => {
-            this.tot+=game.quantity;
-          });
-        });
-      });
-    }
-
-
-    this.cartSub = this.cartSrv.getCartUpdatedListener().subscribe(() => {
-      this.refreshCart();
-    });
-
-    this.searchSrv.currentFilters.subscribe((filters: any) => {
-      if(filters.genre!=undefined && filters.genre!=""){
-        this.toggleSearchBar();
-      }else{
-       return;
-      };
-    });
 
 
     //this.refreshSub = this.searchSrv.myObservable$.subscribe((value:any) => {
@@ -233,6 +203,50 @@ export class NavbarComponent implements OnInit, OnDestroy {
     });
   }
 
+  updateUserData(){
+    this.authSrv.areYouLoggedIn$.subscribe((isLoggedIn)=>{
+      this.isLoggedIn=isLoggedIn;
+    })
+
+    localStorage.getItem('user') ? this.user = JSON.parse(localStorage.getItem('user')!) : this.user = null;
+    console.log(this.user);
+
+    if(this.user){
+      this.userSrv.getUser(this.user.username).subscribe((data)=>{
+        this.userData=data;
+        console.log(this.userData);
+        this.cartSrv.getCartGames(this.userData.cart.id).subscribe((data)=>{
+          console.log(data);
+          this.gamesCart=data;
+          this.refreshCart();
+          console.log(this.gamesCart);
+          this.tot=0;
+          this.gamesCart.forEach((game:any) => {
+            this.tot+=game.quantity;
+          });
+        });
+      });
+    }
+
+
+    this.cartSub = this.cartSrv.getCartUpdatedListener().subscribe(() => {
+      this.refreshCart();
+    });
+
+    this.searchSrv.currentFilters.subscribe((filters: any) => {
+      if(filters.genre!=undefined && filters.genre!=""){
+        this.toggleSearchBar();
+      }else{
+       return;
+      };
+    });
+  }
+
+  navigateToProfile(): void {
+    this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+      this.router.navigate(['../profile', this.userData?.id]);
+    });
+  }
 
 
 }
